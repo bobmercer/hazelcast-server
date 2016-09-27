@@ -22,6 +22,6 @@ echo "# starting now...."
 echo "########################################"
 
 echo "Process id for hazelcast instance is written to location: " $PID_FILE
-java -server $JAVA_OPTS com.hazelcast.core.server.StartServer &
+java -server -Dhazelcast.config=/opt/hazelcast/hazelcast.xml $JAVA_OPTS com.hazelcast.core.server.StartServer &
 echo $! > ${PID_FILE}
 sleep infinity
