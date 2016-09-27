@@ -28,7 +28,7 @@ RUN set -x && \
 	apt-get install -y openjdk-8-jre wget supervisor curl && \
 	apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	mkdir -p $HZ_HOME && \
-	wget https://repo1.maven.org/maven2/com/hazelcast/hazelcast-all/${HZ_VERSION}/hazelcast-all-${HZ_VERSION}.jar ${HZ_HOME}/
+	wget --quiet https://repo1.maven.org/maven2/com/hazelcast/hazelcast-all/${HZ_VERSION}/hazelcast-all-${HZ_VERSION}.jar -O ${HZ_HOME}/
 
 WORKDIR $HZ_HOME
 
