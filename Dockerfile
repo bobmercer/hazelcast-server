@@ -43,6 +43,6 @@ RUN chmod +x /${HZ_HOME}/*.sh && \
 	chmod +x /docker-entrypoint.sh
 
 # Start hazelcast standalone server.
-EXPOSE 5701
+EXPOSE 5701 9001
 ENTRYPOINT ["/bin/bash","/docker-entrypoint.sh"]
 CMD ["hz-node"]
