@@ -4,6 +4,7 @@ MAINTAINER Damien Chambon <chambodn@skysoft-atm.com>
    
 ENV HZ_VERSION 3.7.1
 ENV HZ_HOME /opt/hazelcast/
+ENV CLASSPATH ${HZ_HOME}/hazelcast-all-$HZ_VERSION.jar:$CLASSPATH/*:
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r hzgrp -g 433 && useradd -u 431 -r -m -g hzgrp -d /home/hzusr -s /bin/bash -c "Hazelcast Docker image user" hzusr
