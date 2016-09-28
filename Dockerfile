@@ -37,8 +37,7 @@ COPY config/hz/hazelcast.xml /${HZ_HOME}/hazelcast.xml
 COPY config/supervisor/supervisord.conf /etc/supervisor
 COPY docker-entrypoint.sh /
 
-RUN chmod +x /${HZ_HOME}/*.sh && \
-	chmod +x /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
 # Start hazelcast standalone server.
 EXPOSE 5701 9001
