@@ -33,9 +33,6 @@ RUN set -x && \
 
 WORKDIR $HZ_HOME
 
-# Download hazelcast jars from maven repo.
-#ADD https://repo1.maven.org/maven2/com/hazelcast/hazelcast-all/$HZ_VERSION/hazelcast-all-$HZ_VERSION.jar $HZ_HOME
-COPY start-node.sh /${HZ_HOME}/start-node.sh
 COPY config/hz/hazelcast.xml /${HZ_HOME}/hazelcast.xml
 COPY config/supervisor/supervisord.conf /etc/supervisor
 COPY docker-entrypoint.sh /
