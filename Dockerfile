@@ -26,7 +26,7 @@ RUN set -x \
 RUN set -x && \
 	echo 'deb http://ftp.debian.org/debian jessie-backports main contrib' >> etc/apt/sources.list && \
 	apt-get update && \
-	apt-get install -y openjdk-8-jre wget supervisor curl && \
+	apt-get install -y openjdk-8-jre wget supervisor curl vim && \
 	apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	mkdir -p $HZ_HOME && \
 	wget --quiet https://repo1.maven.org/maven2/com/hazelcast/hazelcast-all/${HZ_VERSION}/hazelcast-all-${HZ_VERSION}.jar -O ${HZ_HOME}/hazelcast-all-${HZ_VERSION}.jar
