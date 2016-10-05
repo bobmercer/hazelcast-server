@@ -12,8 +12,8 @@ else
 		while read path action file; do
 			echo "The file '$file' appeared in directory '$path' via '$action'"
 			if [ $file == $HAZELCAST_FILE ]; then
-				echo "Start hazelcast node..."
-				java -server -Dhazelcast.config=/opt/hazelcast/hazelcast.xml com.hazelcast.core.server.StartServer
+				break
 			fi
 		done
+		java -server -Dhazelcast.config=/opt/hazelcast/hazelcast.xml com.hazelcast.core.server.StartServer
 fi
